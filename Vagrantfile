@@ -9,33 +9,33 @@ Vagrant.configure(2) do |config|
   #config.vm.box = "8thom/acquia-php_5.6"
 
   require 'yaml'
-  if File.exist?('./config.yml')
+  if !File.exist?('./config.yml')
+    raise 'Configuration file not found! Please copy config.yml to your Acquia project root. - https://raw.githubusercontent.com/thom8/acquia-Vagrantfile/master/config.yml'
+  end
 
-    # load config.yml
-    vconfig = YAML::load_file("./config.yml")
+  # load config.yml
+  vconfig = YAML::load_file("./config.yml")
 
-    config.vm.box = vconfig['vagrant_box']
+  config.vm.box = vconfig['vagrant_box']
 
-    if Vagrant.has_plugin?('vagrant-hostmanager')
+  if Vagrant.has_plugin?('vagrant-hostmanager')
 
-      aliases = Array.new()
-      vconfig['apache_vhosts'].each do |vhost|
-        aliases.push(vhost['servername'])
-      end
+    aliases = Array.new()
+    vconfig['apache_vhosts'].each do |vhost|
+      aliases.push(vhost['servername'])
+    end
 
-      aliases.delete_if { |x| x == vconfig['vagrant_hostname'] }
+    aliases.delete_if { |x| x == vconfig['vagrant_hostname'] }
 
-      if aliases.any?
-        config.hostmanager.enabled = true
-        config.hostmanager.manage_host = true
-        config.hostmanager.ignore_private_ip = false
-        config.hostmanager.include_offline = true
-        config.vm.define 'cloudvm' do |node|
-          node.vm.hostname = vconfig['vagrant_hostname']
-          node.vm.network :private_network, ip: vconfig['vagrant_ip']
-          node.hostmanager.aliases = aliases
-        end
-
+    if aliases.any?
+      config.hostmanager.enabled = true
+      config.hostmanager.manage_host = true
+      config.hostmanager.ignore_private_ip = false
+      config.hostmanager.include_offline = true
+      config.vm.define 'cloudvm' do |node|
+        node.vm.hostname = vconfig['vagrant_hostname']
+        node.vm.network :private_network, ip: vconfig['vagrant_ip']
+        node.hostmanager.aliases = aliases
       end
 
     end
