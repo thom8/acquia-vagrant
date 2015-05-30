@@ -3,11 +3,6 @@
 
 Vagrant.configure(2) do |config|
 
-  # Uncomment one of the following boxes if config.yml doesn't exist.
-  #config.vm.box = "8thom/acquia-php_5.3"
-  #config.vm.box = "8thom/acquia-php_5.5"
-  #config.vm.box = "8thom/acquia-php_5.6"
-
   require 'yaml'
   if !File.exist?('./config.yml')
     raise 'Configuration file not found! Please copy config.yml to your Acquia project root. - https://raw.githubusercontent.com/thom8/acquia-Vagrantfile/master/config.yml'
