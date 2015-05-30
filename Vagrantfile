@@ -3,7 +3,7 @@
 
 Vagrant.configure(2) do |config|
 
-  # Uncomment one of the following boxes.
+  # Uncomment one of the following boxes if config.yml doesn't exist.
   #config.vm.box = "8thom/acquia-php_5.3"
   #config.vm.box = "8thom/acquia-php_5.5"
   #config.vm.box = "8thom/acquia-php_5.6"
@@ -13,6 +13,8 @@ Vagrant.configure(2) do |config|
 
     # load config.yml
     vconfig = YAML::load_file("./config.yml")
+
+    config.vm.box = vconfig['vagrant_box']
 
     if Vagrant.has_plugin?('vagrant-hostmanager')
 
