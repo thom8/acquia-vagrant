@@ -1,12 +1,22 @@
 ---
+# Vagrant base box
+# available boxes :-
+# 8thom/acquia-php_5.3
+# 8thom/acquia-php_5.5
+# 8thom/acquia-php_5.6
+vagrant_box: 8thom/acquia-php_5.6
+
 # Vagrant hostname and IP configuration.
 vagrant_hostname: local.cloudvm.com
 vagrant_ip: 192.168.4.40
 
-# Vagrant base box
-#vagrant_box: 8thom/acquia-php_5.3
-#vagrant_box: 8thom/acquia-php_5.5
-vagrant_box: 8thom/acquia-php_5.6
+# Run provision on vagrant up
+vagrantup_provision: "false"
+
+# Import database
+# available types: file, sql-sync
+#db_import_type: file
+#db_import_source:
 
 # A list of synced folders, with the keys 'local_path', 'destination', and 'id'.
 # You can use NFS by switching the 'type' to 'nfs'.
@@ -15,11 +25,6 @@ vagrant_synced_folders:
     destination: /drupal
     id: drupal
     type: nfs
-# Sync drush config.
-#  - local_path: ~/.drush
-#    destination: /home/vagrant/.drush
-#    id: drush
-#    type: nfs
 
 # Memory and CPU to use for this VM.
 vagrant_memory: 1024
@@ -47,6 +52,8 @@ apache_vhosts:
   - servername: "local.xhprof.com"
     documentroot: "/usr/share/php/xhprof_html"
 
+# The php version can not be changed.
+# Another vagrant_box must be selected above.
 php_version: "5.6"
 php_memory_limit: "256M"
 php_display_errors: "On"
