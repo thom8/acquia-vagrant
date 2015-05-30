@@ -1,6 +1,8 @@
 # Simple Acquia Vagrant Box
 A super simple Vagrantfile to setup a vagrant box for your Acquia project.
 
+**NOTE:** You only need to download the project files if you want to customise the configuration.
+
 ## Usage
 
   1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) & [Vagrant](https://www.vagrantup.com/downloads.html)
@@ -21,12 +23,10 @@ A super simple Vagrantfile to setup a vagrant box for your Acquia project.
   $databases. Normally, you add these lines to the end of your
   settings.php file.
 
-  2. In you Acquia project root run `$ vagrant init 8thom/acquia-php_5.5`
+  3. In you Acquia project root run `$ vagrant init 8thom/acquia-php_5.5; vagrant up`
 
   **-or-**
 
-  `$ vagrant init 8thom/acquia-php_5.4` for **PHP 5.4**
+  `$ vagrant init 8thom/acquia-php_5.4; vagrant up` for **PHP 5.4**
 
-  `$ vagrant init 8thom/acquia-php_5.6` for **PHP 5.6**
-
-  3. then run `$ vagrant up` :)
+  `$ vagrant init 8thom/acquia-php_5.6; vagrant up` for **PHP 5.6**
