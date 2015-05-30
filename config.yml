@@ -1,9 +1,6 @@
 ---
 # Vagrant base box
-# available boxes :-
-# 8thom/acquia-php_5.3
-# 8thom/acquia-php_5.5
-# 8thom/acquia-php_5.6
+# available boxes - https://atlas.hashicorp.com/boxes/search?q=8thom
 vagrant_box: 8thom/acquia-php_5.6
 
 # Vagrant hostname and IP configuration.
