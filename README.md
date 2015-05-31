@@ -68,27 +68,36 @@ The path is relative to the Acquia project root.
 
 ### drush sql-sync
 
-*Requires [Setting up SSH agent forwarding](https://developer.github.com/guides/using-ssh-agent-forwarding/#setting-up-ssh-agent-forwarding)
+  **Requires**
+  - [Setting up SSH agent forwarding](https://developer.github.com/guides/using-ssh-agent-forwarding/#setting-up-ssh-agent-forwarding)
+  - Adding drush aliases to your project
 
-Update ~/.ssh/config to include the following.
+  1. Update ~/.ssh/config to include the following.
 
-```
-Host 127.0.0.1
-  ForwardAgent          yes
-```
+  ```
+  Host 127.0.0.1
+    ForwardAgent          yes
+  ```
 
-*Run `ssh-add -L` inside the vagrant box to test.
+  *Run `ssh-add -L` inside the vagrant box to test.
 
-Update config.yml to include --
+  2. Add your Acquia drush aliases to your project.
 
-```
-db_import_type: sql-sync
-db_import_source: [site].[env]
-```
+  Download your aliases -- https://docs.acquia.com/cloud/drush-aliases
+  Copy `[site].aliases.drushrc.php` to docroot/sites/all/drush/
+
+  3. Update config.yml to include --
+
+  ```
+  db_import_type: sql-sync
+  db_import_source: [site].[env]
+  ```
 
 ## hosts file configuration (DNS)
 
-*Requires [Vagrant Host Manager](https://github.com/smdahlen/vagrant-hostmanager) plugin.
+**Requires**
+- [Vagrant Host Manager](https://github.com/smdahlen/vagrant-hostmanager) plugin.
+- custom config.yml file
 
 Installation
 
