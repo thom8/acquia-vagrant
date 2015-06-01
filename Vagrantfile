@@ -27,12 +27,7 @@ Vagrant.configure(2) do |config|
       config.hostmanager.manage_host = true
       config.hostmanager.ignore_private_ip = false
       config.hostmanager.include_offline = true
-      config.vm.define 'cloudvm' do |node|
-        node.vm.hostname = vconfig['vagrant_hostname']
-        node.vm.network :private_network, ip: vconfig['vagrant_ip']
-        node.hostmanager.aliases = aliases
-      end
-
+      config.hostmanager.aliases = aliases
     end
 
   end
