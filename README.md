@@ -1,5 +1,5 @@
 # Simple Acquia Vagrant Box
-A super simple Vagrantfile to setup a vagrant box for your [Acquia](https://www.acquia.com/) project.
+A super simple Vagrant box for your [Acquia](https://www.acquia.com/) project.
 
 **NOTE:** You only need to download the project files if you want to customise the configuration.
 
