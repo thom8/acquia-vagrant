@@ -31,7 +31,7 @@ A super simple Vagrantfile to setup a vagrant box for your [Acquia](https://www.
 
   All available boxes -- [https://atlas.hashicorp.com/boxes/search?q=8thom](https://atlas.hashicorp.com/boxes/search?q=8thom)
 
-Default configuration can be found in [config.yml](https://github.com/thom8/acquia-vagrant/blob/master/config.yml)
+  Default configuration can be found in [config.yml](https://github.com/thom8/acquia-vagrant/blob/master/config.yml)
 
 ## Thanks
 
@@ -57,20 +57,20 @@ A database import can be configured to run on vagrant up.
 
 ### File import
 
-Update config.yml to include --
+  Update config.yml to include --
 
-```
-db_import_type: file
-db_import_source: [path to sql dump]
-```
+  ```
+  db_import_type: file
+  db_import_source: [path to sql dump]
+  ```
 
-The path is relative to the Acquia project root.
+  The path is relative to the Acquia project root.
 
 ### drush sql-sync
 
   **Requires**
   - [Setting up SSH agent forwarding](https://developer.github.com/guides/using-ssh-agent-forwarding/#setting-up-ssh-agent-forwarding)
-  - Adding drush aliases to your project
+  - Adding [drush aliases](https://docs.acquia.com/cloud/drush-aliases) to your project
 
   1. Update ~/.ssh/config to include the following.
 
@@ -96,18 +96,13 @@ The path is relative to the Acquia project root.
 ## hosts file configuration (DNS)
 
 **Requires**
-- [Vagrant Host Manager](https://github.com/smdahlen/vagrant-hostmanager) plugin.
-- custom config.yml file
+- [Vagrant Host Updater](https://github.com/cogitatio/vagrant-hostsupdater) plugin.
 
-Installation
+  ### Installation
 
-`$ vagrant plugin install vagrant-hostmanager`
+  `$ vagrant plugin install vagrant-hostsupdater`
 
-Copy [Vagrantfile](https://raw.githubusercontent.com/thom8/acquia-vagrant/master/Vagrantfile) to your Acquia project root.
-
-`$ wget https://raw.githubusercontent.com/thom8/acquia-vagrant/master/Vagrantfile`
-
-The hostname & vhost servername settings in config.yml will be automatically added to `/etc/hosts` of the host machine.
+  The hostname & vhost servername settings in config.yml will be automatically added to `/etc/hosts` of the host machine.
 
 ## What's an Acquia project root?
 
