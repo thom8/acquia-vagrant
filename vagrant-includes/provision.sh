@@ -5,9 +5,9 @@
 
 vagrantup_provision="$1"
 
-if [ "$vagrantup_provision" == "false" ] ; then
+if [ ! -f vagrantup ] ; then
 
-  if [ ! -f vagrantup ] ; then
+  if [ "$vagrantup_provision" == "false" ] ; then
 
     # Create vagrantup file.
     touch vagrantup
