@@ -108,6 +108,26 @@ A database import can be configured to run on vagrant up.
 
   The hostname & vhost servername settings in config.yml will be automatically added to `/etc/hosts` of the host machine.
 
-## What's an Acquia project root?
+## FAQ
 
-This the the top level directory of an [Acquia](https://www.acquia.com/) project which contains the docroot directory.
+* How does this work?
+
+  The base boxes are a pre-provisioned version of [Acquia Cloud VM](https://github.com/geerlingguy/acquia-cloud-vm) that is packaged with a custom Vagrantfile with default config set so it can work without any customisation.
+  Ansible is also pre-installed on the box which allows it to reprovision itself, so during provisioning the config.yml file is uploaded to the VM before Ansible is run in local mode.
+  For an example on how provisioning works please see the [Example Project](https://github.com/thom8/acquia-vagrant-example)
+
+* How does it work without a custom config.yml file?
+
+  There is a default config.yml file in the box so a custom one is not required. An example with default config is included in the project.
+
+* Can I customise the Vagrantfile?
+
+  Sure, the only issue would be a namespace collision with the box Vagrantfile. However, you can use this method to override the default provisioners in the project Vagrantfile.
+
+* Can I customise the provisioning scripts?
+
+  Yep, the current provisioning scripts in "vagrant-include" can be added to your own project and will override the defaults packaged in the box.
+
+* What's an Acquia project root?
+
+  This the the top level directory of an [Acquia](https://www.acquia.com/) project which contains the docroot directory.
