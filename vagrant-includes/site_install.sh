@@ -9,7 +9,7 @@ rm -rf siteinstalled
 
 if [ ! -f siteinstalled ] ; then
 
-  echo "Starting Drupal 8 installation. This takes a few mins."
+  echo "Starting Drupal installation. This takes a few mins."
 
   # Tidy up
   drush --root=/drupal sql-drop -y >/dev/null
