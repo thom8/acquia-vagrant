@@ -22,7 +22,7 @@ if [ ! -f siteinstalled ] ; then
   --db-url="mysql://root:root@localhost:3306/$dbName" \
   --account-name="$drupalUser" \
   --account-pass="$drupalPass" \
-  --site-name="$siteName"
+  --site-name="$siteName" >/dev/null
 
   echo "Install complete."
 
