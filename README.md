@@ -23,11 +23,11 @@ A super simple Vagrant box for your [Acquia](https://www.acquia.com/) project.
   $databases. Normally, you add these lines to the end of your
   settings.php file.
 
-  3. In your Acquia project root run `$ vagrant init 8thom/acquia-php_5.5; vagrant up`
+  3. In your Acquia project root run `$ vagrant init 8thom/acquia-php_5.6; vagrant up`
 
   **-or-**
 
-  `$ vagrant init 8thom/acquia-php_5.6; vagrant up` for **PHP 5.6**
+  `$ vagrant init 8thom/acquia-php_5.5; vagrant up` for **PHP 5.5**
 
   All available boxes -- [https://atlas.hashicorp.com/8thom](https://atlas.hashicorp.com/8thom)
 
