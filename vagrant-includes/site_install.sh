@@ -5,8 +5,6 @@ siteName="$2"
 drupalUser="$3"
 drupalPass="$4"
 
-rm -rf siteinstalled
-
 if [ ! -f siteinstalled ] ; then
 
   echo "Starting Drupal installation. This takes a few mins."
