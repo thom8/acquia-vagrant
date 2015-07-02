@@ -7,6 +7,9 @@ vagrant_box: 8thom/acquia-php_5.6
 vagrant_hostname: local.cloudvm.com
 vagrant_ip: 192.168.4.40
 
+# Update ansible roles before provisioning
+update_ansiable_roles: no
+
 # Run provision on vagrant up
 vagrantup_provision: no
 

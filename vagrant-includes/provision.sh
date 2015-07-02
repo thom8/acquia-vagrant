@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Reprovision the box.
+# Provision the box.
 # Skip if vagrantup_provision is false.
 
 vagrantup_provision="$1"
@@ -23,13 +23,7 @@ fi
 
 if [ ! "$skip_provision" ] ; then
 
-  # cd to Ansible staging directory
-  cd /etc/ansible/staging
-
-  echo "Updating ansible roles."
-  ansible-galaxy install --force -r requirements.txt
-
-  echo "Reprovisioning box."
-  ANSIBLE_FORCE_COLOR=1 PYTHONUNBUFFERED=1 ansible-playbook playbook.yml --sudo -c local -i "127.0.0.1vagrant,"
+  echo "Provisioning box."
+  ANSIBLE_FORCE_COLOR=1 PYTHONUNBUFFERED=1 ansible-playbook /etc/ansible/staging/playbook.yml --sudo -c local -i "127.0.0.1vagrant,"
 
 fi
