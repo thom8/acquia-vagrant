@@ -36,8 +36,12 @@ vagrant_synced_folders:
 vagrant_memory: 1024
 vagrant_cpus: 2
 
+# Host drush alias
+create_drush_alias: no
+
 # Other variables in this file will be used during Ansible provisioning.
 drush_version: "6.6.0"
+drush_keep_updated: yes
 
 firewall_allowed_tcp_ports:
   - "22"
