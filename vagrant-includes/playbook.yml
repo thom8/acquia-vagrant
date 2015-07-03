@@ -36,7 +36,7 @@
     - { role: geerlingguy.phpmyadmin, tags: ['phpmyadmin'] }
     - { role: geerlingguy.composer, tags: ['composer'] }
     - { role: geerlingguy.drush, tags: ['drush'] }
-    - { role: geerlingguy.drupal-console, when: "php_version != 5.3", tags: ['drupal-console'] }
+    - { role: geerlingguy.drupal-console, tags: ['drupal-console'], when: php_version.stdout.find('5.3') != 0 }
     - { role: geerlingguy.daemonize, tags: ['mail'] }
     - { role: geerlingguy.mailhog, tags: ['mail'] }
     - { role: geerlingguy.java, tags: ['solr'] }
