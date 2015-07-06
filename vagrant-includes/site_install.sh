@@ -1,4 +1,4 @@
-#!/bin/bash -xe
+#!/bin/bash
 
 dbName="$1"
 siteName="$2"
