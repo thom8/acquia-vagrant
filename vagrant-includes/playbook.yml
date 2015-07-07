@@ -20,6 +20,14 @@
       apt_repository: repo='ppa:ondrej/php5-5.6'
       when: php_version == "5.6"
 
+    - name: Stop Apache service.
+      shell: apache2ctl stop
+      ignore_errors: yes
+
+    - name: Stop Varnish service.
+      service: name=varnish state=stopped enabled=yes
+      ignore_errors: yes
+
   roles:
     - { role: geerlingguy.firewall, tags: ['firewall'] }
     - { role: geerlingguy.git, tags: ['git'] }
