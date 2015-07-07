@@ -1,4 +1,6 @@
 # Simple Acquia Vagrant Box
+
+[![Join the chat at https://gitter.im/thom8/acquia-vagrant](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/thom8/acquia-vagrant?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 A super simple Vagrant box for your [Acquia](https://www.acquia.com/) project.
 
 **NOTE:** You only need to download the project files if you want to customise the configuration.
