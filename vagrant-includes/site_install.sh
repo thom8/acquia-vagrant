@@ -5,7 +5,7 @@ siteName="$2"
 drupalUser="$3"
 drupalPass="$4"
 
-if [ ! -f siteinstalled ] ; then
+if [ ! -f /home/vagrant/siteinstalled ] ; then
 
   echo "Starting Drupal installation. This takes a few mins."
 
@@ -25,6 +25,6 @@ if [ ! -f siteinstalled ] ; then
   echo "Install complete."
 
   # Create dbimported file.
-  touch siteinstalled
+  touch /home/vagrant/siteinstalled
 
 fi

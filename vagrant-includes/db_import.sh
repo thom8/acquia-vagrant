@@ -5,7 +5,7 @@
 import_type="$1"
 source="$2"
 
-if [ ! -f dbimported ] ; then
+if [ ! -f /home/vagrant/dbimported ] ; then
 
     if [ "$import_type" == "file" ] ; then
 
@@ -30,6 +30,6 @@ if [ ! -f dbimported ] ; then
     fi
 
     # Create dbimported file.
-    touch dbimported
+    touch /home/vagrant/dbimported
 
 fi

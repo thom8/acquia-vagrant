@@ -5,12 +5,12 @@
 
 vagrantup_provision="$1"
 
-if [ ! -f vagrantup ] ; then
+if [ ! -f /home/vagrant/vagrantup ] ; then
 
   if [ "$vagrantup_provision" == "false" ] ; then
 
     # Create vagrantup file.
-    touch vagrantup
+    touch /home/vagrant/vagrantup
 
     # Skip provisioning
     skip_provision="true"
