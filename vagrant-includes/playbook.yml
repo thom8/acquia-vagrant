@@ -57,6 +57,11 @@
     - name: Install postfix so Drupal can send emails.
       apt: name=postfix state=installed
 
+    - name: Update ansible roles.
+      shell: >
+        ansible-galaxy install --force -r /etc/ansible/staging/requirements.txt
+      when: update_ansible_roles
+
   roles:
     - { role: geerlingguy.firewall, tags: ['firewall'] }
     - { role: geerlingguy.git, tags: ['git'] }
